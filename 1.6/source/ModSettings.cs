@@ -11,7 +11,14 @@ namespace Lumen_Control
         public const float MaxGlowRadius = 40f;
         public const float DefaultRangePadding = 5f;
 
+        public const float DefaultPowerCostPercentPerRadius = 3f;
+        public const float MinPowerCostPercentPerRadius = 0f;
+        public const float MaxPowerCostPercentPerRadius = 1000f;
+
         public static Dictionary<string, LightRadiusRule> LightRulesByDefName = new Dictionary<string, LightRadiusRule>();
+
+        public static bool ScalePowerConsumptionWithRadius = false;
+        public static float PowerCostPercentPerRadius = DefaultPowerCostPercentPerRadius;
 
         public override void ExposeData()
         {
@@ -20,6 +27,15 @@ namespace Lumen_Control
             {
                 LightRulesByDefName = new Dictionary<string, LightRadiusRule>();
             }
+
+            Scribe_Values.Look(ref ScalePowerConsumptionWithRadius, "scalePowerConsumptionWithRadius", false);
+            Scribe_Values.Look(ref PowerCostPercentPerRadius, "powerCostPercentPerRadius", DefaultPowerCostPercentPerRadius);
+            NormalizePowerCostPercentPerRadius();
+        }
+
+        public static void NormalizePowerCostPercentPerRadius()
+        {
+            PowerCostPercentPerRadius = Mathf.Clamp(PowerCostPercentPerRadius, MinPowerCostPercentPerRadius, MaxPowerCostPercentPerRadius);
         }
 
         public static bool IsValidGlowerDef(ThingDef def)

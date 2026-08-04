@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialog_GlowRadius.cs" />
+    <Compile Include="LightPowerConsumptionUtility.cs" />
     <Compile Include="LightRadiusSettings.cs" />
     <Compile Include="LightRadiusUtility.cs" />
     <Compile Include="Logger.cs" />

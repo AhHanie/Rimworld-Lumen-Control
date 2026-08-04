@@ -7,7 +7,7 @@
         <li>1.6</li>
     </supportedVersions>
     <description>Adds a gizmo to adjust a light source's glow radius. Works for all light sources.</description>
-    <modVersion>1.0.0</modVersion>
+    <modVersion>1.1.0</modVersion>
     <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3775919927</url>
     <modDependencies>
         <li>

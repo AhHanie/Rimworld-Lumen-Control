@@ -9,6 +9,11 @@
     <LumenControl.BaseRadius>Base radius: {0}</LumenControl.BaseRadius>
     <LumenControl.CurrentRadius>Current radius: {0}</LumenControl.CurrentRadius>
 
+    <LumenControl.ScalePowerWithRadius>Scale power consumption with radius</LumenControl.ScalePowerWithRadius>
+    <LumenControl.ScalePowerWithRadiusDesc>When enabled, lights that draw electricity consume extra power for every radius above their default glow radius. Shrinking a light below its default never reduces its power draw below normal.</LumenControl.ScalePowerWithRadiusDesc>
+    <LumenControl.PowerCostPercentPerRadius>Additional power per radius above default (%)</LumenControl.PowerCostPercentPerRadius>
+    <LumenControl.PowerCostPercentPerRadiusDesc>The percentage of a light's normal power consumption added for each full radius its glow radius is increased above its default. Only applies while "Scale power consumption with radius" is enabled.</LumenControl.PowerCostPercentPerRadiusDesc>
+
     <LumenControl.ColumnLight>Light</LumenControl.ColumnLight>
     <LumenControl.ColumnEnable>Enable radius control</LumenControl.ColumnEnable>
     <LumenControl.ColumnMinimum>Minimum</LumenControl.ColumnMinimum>

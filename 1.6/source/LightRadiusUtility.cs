@@ -15,6 +15,7 @@ namespace Lumen_Control
 
             ModSettings.NormalizeRule(rule);
             glower.GlowRadius = Mathf.Clamp(requestedRadius, rule.minRadius, rule.maxRadius);
+            LightPowerConsumptionUtility.UpdatePowerConsumption(glower);
 
             if (glower.parent.Spawned && glower.Glows)
             {

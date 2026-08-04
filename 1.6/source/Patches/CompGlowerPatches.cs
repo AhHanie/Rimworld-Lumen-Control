@@ -1,10 +1,24 @@
 using System.Collections.Generic;
 using HarmonyLib;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace Lumen_Control.Patches
 {
+    [HarmonyPatch(typeof(CompPowerTrader), nameof(CompPowerTrader.SetUpPowerVars))]
+    public static class CompPowerTrader_SetUpPowerVars_Patch
+    {
+        public static void Postfix(CompPowerTrader __instance)
+        {
+            CompGlower glower = __instance.parent.GetComp<CompGlower>();
+            if (glower != null)
+            {
+                LightPowerConsumptionUtility.UpdatePowerConsumption(glower);
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(CompGlower), "PostExposeData")]
     public static class CompGlower_PostExposeData_Patch
     {
